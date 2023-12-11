@@ -14,4 +14,4 @@ app.get('/api', (req, res) => {
 app.listen(8080, () => {
     console.log('Server started at http://localhost:8080')
 })
-module.exports = app
+module.exports = { app }
