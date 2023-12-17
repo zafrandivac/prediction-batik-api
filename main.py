@@ -20,11 +20,7 @@ def prediction(img):
     result = label[np.argmax(predicting)]
     return result
 
-@app.route("/")
-def home():
-    return "Hello, World!"
-
-@app.route("/batik-prediction", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def index():
     file = request.files.get('file')
     if file is None or file.filename == "":
@@ -37,4 +33,4 @@ def index():
     return pred_img
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=True)
